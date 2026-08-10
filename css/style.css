@@ -1,1 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap'); :root { --teal: #1E5F5B; --coral: #D6604A; --gold: #E3A23B; --cream: #FAF3E4; --ink: #2A2622; --paper: #FFFDF8; } * { box-sizing: border-box; } body { margin: 0; font-family: 'Public Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.5; } h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; margin: 0 0 0.4em; } a { color: var(--teal); } header.site-header { background: var(--teal); color: var(--cream); padding: 1.2rem 1.5rem; display: flex; align-items: center; justify-content: space-between; } header.site-header h1 { color: var(--cream); font-size: 1.4rem; margin: 0; } nav.site-nav a { color: var(--cream); text-decoration: none; margin-left: 1.2rem; font-weight: 600; font-size: 0.95rem; } nav.site-nav a:hover { text-decoration: underline; } .hero { padding: 3rem 1.5rem; text-align: center; background: var(--paper); border-bottom: 3px solid var(--gold); } .hero h2 { font-size: 2.2rem; color: var(--teal); } .hero p { max-width: 42em; margin: 0.5em auto 0; color: #55504a; } .controls { display: flex; gap: 0.75rem; flex-wrap: wrap; padding: 1.5rem; max-width: 1100px; margin: 0 auto; } .controls input, .controls select { font-family: 'Public Sans', sans-serif; padding: 0.5rem 0.75rem; border: 2px solid #ddd2bd; border-radius: 6px; background: var(--paper); } .day-group { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 2rem; } .day-group h3 { color: var(--coral); border-bottom: 2px solid var(--gold); padding-bottom: 0.3rem; } .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 1rem; } .card { background: var(--paper); border-radius: 10px; padding: 1.1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.08); border-top: 5px solid var(--teal); } .card.type-Instructional { border-top-color: var(--coral); } .card.type-Special.Event, .card[data-type="Special Event"] { border-top-color: var(--gold); } .badge { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 0.15rem 0.55rem; border-radius: 999px; color: #fff; background: var(--teal); margin-bottom: 0.5rem; } .badge.Instructional { background: var(--coral); } .badge.Special.Event, .badge[data-badge="Special Event"] { background: var(--gold); } .card h4 { margin: 0 0 0.3rem; font-size: 1.1rem; } .card .meta { font-size: 0.85rem; color: #6b655c; margin-bottom: 0.5rem; } .card p { font-size: 0.9rem; margin: 0; } .empty-state { text-align: center; padding: 2rem; color: #8a8375; } footer { text-align: center; padding: 2rem 1rem; color: #8a8375; font-size: 0.85rem; }
+
+paste-4-style_css.txt
+
+Page
+1
+/
+1
+100%
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --teal: #1E5F5B;
+  --coral: #D6604A;
+  --gold: #E3A23B;
+  --cream: #FAF3E4;
+  --ink: #2A2622;
+  --paper: #FFFDF8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Public Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 600; margin: 0 0 0.4em; }
+
+a { color: var(--teal); }
+
+header.site-header {
+  background: var(--teal);
+  color: var(--cream);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header.site-header h1 { color: var(--cream); font-size: 1.4rem; margin: 0; }
+
+nav.site-nav a {
+  color: var(--cream);
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+nav.site-nav a:hover { text-decoration: underline; }
+
+.hero {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: var(--paper);
+  border-bottom: 3px solid var(--gold);
+}
+.hero h2 { font-size: 2.2rem; color: var(--teal); }
+.hero p { max-width: 42em; margin: 0.5em auto 0; color: #55504a; }
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.controls input, .controls select {
+  font-family: 'Public Sans', sans-serif;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #ddd2bd;
+  border-radius: 6px;
+  background: var(--paper);
+}
+
+.day-group { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 2rem; }
+.day-group h3 {
+  color: var(--coral);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.3rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: var(--paper);
+  border-radius: 10px;
+  padding: 1.1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-top: 5px solid var(--teal);
+}
+.card.type-Instructional { border-top-color: var(--coral); }
+.card.type-Special.Event, .card[data-type="Special Event"] { border-top-color: var(--gold); }
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--teal);
+  margin-bottom: 0.5rem;
+}
+.badge.Instructional { background: var(--coral); }
+.badge.Special.Event, .badge[data-badge="Special Event"] { background: var(--gold); }
+
+.card h4 { margin: 0 0 0.3rem; font-size: 1.1rem; }
+.card .meta { font-size: 0.85rem; color: #6b655c; margin-bottom: 0.5rem; }
+.card p { font-size: 0.9rem; margin: 0; }
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #8a8375;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #8a8375;
+  font-size: 0.85rem;
+}
+
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.4rem;
+  margin-top: 1rem;
+}
+.poster-card {
+  background: var(--paper);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  border-top: 5px solid var(--gold);
+  display: flex;
+  flex-direction: column;
+}
+.poster-image {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  background-color: #ecdfc4;
+}
+.poster-image-placeholder {
+  background: linear-gradient(135deg, var(--teal), var(--coral));
+}
+.poster-body { padding: 1.1rem; }
+.poster-date {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--coral);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.3rem;
+}
+.poster-body h4 { margin: 0 0 0.3rem; font-size: 1.15rem; }
+.poster-body .meta { font-size: 0.85rem; color: #6b655c; margin-bottom: 0.5rem; }
+.poster-body p { font-size: 0.9rem; margin: 0 0 0.5rem; }
+.poster-leaders { font-size: 0.85rem; font-weight: 600; color: var(--teal); }
+.poster-notes { font-size: 0.8rem; color: #8a8375; font-style: italic; margin-top: 0.3rem; }
+Displaying paste-4-style_css.txt.
