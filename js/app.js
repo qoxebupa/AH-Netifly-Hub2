@@ -1,11 +1,3 @@
-
-paste-3-app_js.txt
-
-Page
-1
-/
-1
-100%
 async function loadPrograms() {
   const res = await fetch('/content/programs.json', { cache: 'no-store' });
   const data = await res.json();
@@ -112,4 +104,3 @@ function renderPrograms(programs) {
   search.addEventListener('input', applyFilters);
   typeFilter.addEventListener('change', applyFilters);
 })();
-Displaying paste-3-app_js.txt.
