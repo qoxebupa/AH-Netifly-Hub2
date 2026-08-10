@@ -1,13 +1,4 @@
-
-paste-1-config_yml.txt
-
-Page
-1
-/
-1
-100%
 backend: {name: git-gateway, branch: main}
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 collections: [{name: "programs", label: "Programs", files: [{name: "program_list", label: "All Programs", file: "content/programs.json", fields: [{label: "Programs", name: "programs", widget: "list", summary: "{{fields.day}} — {{fields.program}}", fields: [{label: "Day", name: "day", widget: "select", options: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Special Events"]}, {label: "Date", name: "date", widget: "string", required: false, hint: "For Special Events only, e.g. Saturday, August 15"}, {label: "Program Name", name: "program", widget: "string"}, {label: "Time", name: "time", widget: "string"}, {label: "Room", name: "room", widget: "string", required: false}, {label: "Type", name: "type", widget: "select", options: ["Drop-in","Instructional","Special Event"]}, {label: "Status", name: "status", widget: "select", options: ["Active","Paused","Cancelled"], default: "Active"}, {label: "Image", name: "image", widget: "string", required: false}, {label: "Video", name: "video", widget: "string", required: false}, {label: "Leader(s)", name: "leaders", widget: "string", required: false}, {label: "Description", name: "description", widget: "text", required: false}, {label: "Notes", name: "notes", widget: "string", required: false}]}]}]}]
-Displaying paste-1-config_yml.txt.
