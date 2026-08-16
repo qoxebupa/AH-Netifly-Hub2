@@ -266,10 +266,12 @@ img, video { max-width: 100%; display: block; }
   border: 6px solid var(--ah-white);
   outline: 2px solid var(--ah-teal-pale);
 }
-.featured-video video {
+.featured-video video,
+.featured-video iframe {
   width: 100%;
   aspect-ratio: 16/9;
   display: block;
+  border: none;
   background: var(--ah-ink);
 }
 .featured-video-placeholder {

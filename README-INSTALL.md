@@ -42,6 +42,10 @@ Turned out the real `content/programs.json` in this repo is shaped like `{"progr
 - **Program detail page, simplified:** now shows exactly Title → Day/Time/Room → Video → Description → Cost, in that order.
 - **Note on "Cost":** your `content/programs.json` doesn't currently have a dedicated cost/price field, so the Cost box shows whatever's in that program's `notes` field (e.g. "Session fee applies."), falling back to "Free / included with membership — call to confirm" when notes are blank. If you'd like a true dedicated cost field with real dollar amounts per program, that would mean adding a new field to the Decap CMS config and re-entering that data for each program — let me know if you want to do that as a follow-up.
 
+## Round 3.1 — "Who We Are" video is live
+
+The About page now embeds the real 3-minute "Who We Are" video via its VideoPress link, replacing the placeholder box. No file upload was needed — it's linked directly from videopress.com.
+
 ## After it's live
 
 - Edit programs the same way you already do, through `/admin`.
