@@ -95,7 +95,9 @@
         return res.json();
       })
       .then(function (data) {
-        allPrograms = Array.isArray(data) ? data : [];
+        // The CMS file is shaped as {"programs": [...]}, but tolerate a
+        // bare array too in case that ever changes.
+        allPrograms = Array.isArray(data) ? data : (Array.isArray(data && data.programs) ? data.programs : []);
 
         var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].filter(function (d) {
           return allPrograms.some(function (p) { return p.day === d; });

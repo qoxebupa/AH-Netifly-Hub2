@@ -89,7 +89,7 @@
     fetch(DATA_URL, { cache: "no-store" })
       .then(function (res) { return res.json(); })
       .then(function (data) {
-        var list = Array.isArray(data) ? data : [];
+        var list = Array.isArray(data) ? data : (Array.isArray(data && data.programs) ? data.programs : []);
         var match = list.find(function (p) { return slugify(p.program) === slug; });
         if (!match) {
           root.innerHTML =

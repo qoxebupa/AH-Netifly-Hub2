@@ -31,6 +31,10 @@ Same steps you already used successfully:
 - **"Who We Are" video:** added a placeholder spot on the About page (look for the teal box that says "Full 'Who We Are' video coming here soon"). Once Mike sends that file, it'll be dropped into `/videos/who-we-are.mp4` and this placeholder swapped for the real embedded video.
 - **Friendlier Program Hub cards:** each card now shows a short description snippet and a clear "View details →" link, instead of just the bare schedule info.
 
+## Round 2.1 fix — Program Hub was showing "0 programs found"
+
+Turned out the real `content/programs.json` in this repo is shaped like `{"programs": [ ...113 entries... ] }` (an object with a `programs` key), not a bare list like `[ ...entries... ]`. The page code originally only understood the bare-list shape, so it silently loaded zero programs instead of erroring. `js/programs.js` and `js/program-detail.js` are both fixed to handle the real shape now (and the sample `content/programs.json` in this zip was updated to match, for consistency). No changes needed to your actual CMS data — this was purely a code fix.
+
 ## After it's live
 
 - Edit programs the same way you already do, through `/admin`.
