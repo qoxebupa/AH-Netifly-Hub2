@@ -60,16 +60,16 @@
       '<a class="back-link" href="/programs.html">&larr; Back to all programs</a>' +
       '<span class="' + badgeClass + '">' + escapeHtml(program.type || "Program") + "</span>" +
       "<h1>" + escapeHtml(program.program) + "</h1>" +
-      (program.description ? "<p>" + escapeHtml(program.description) + "</p>" : "") +
       '<div class="detail-meta-grid">' +
       metaItem("Day", program.day) +
       metaItem("Time", program.time) +
       metaItem("Room", program.room) +
-      metaItem("Status", program.status) +
-      (program.leaders ? metaItem("Instructor/Leader", program.leaders) : "") +
       "</div>" +
       videoEmbed(program.video) +
-      (program.notes ? "<p><strong>Notes:</strong> " + escapeHtml(program.notes) + "</p>" : "") +
+      (program.description ? "<p>" + escapeHtml(program.description) + "</p>" : "") +
+      '<div class="detail-meta-grid">' +
+      metaItem("Cost", program.notes || "Free / included with membership — call to confirm") +
+      "</div>" +
       '<p class="section-header"><a class="btn btn-primary" href="/contact.html">Ask about this program &rarr;</a></p>';
   }
 

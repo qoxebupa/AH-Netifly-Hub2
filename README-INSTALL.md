@@ -35,6 +35,13 @@ Same steps you already used successfully:
 
 Turned out the real `content/programs.json` in this repo is shaped like `{"programs": [ ...113 entries... ] }` (an object with a `programs` key), not a bare list like `[ ...entries... ]`. The page code originally only understood the bare-list shape, so it silently loaded zero programs instead of erroring. `js/programs.js` and `js/program-detail.js` are both fixed to handle the real shape now (and the sample `content/programs.json` in this zip was updated to match, for consistency). No changes needed to your actual CMS data — this was purely a code fix.
 
+## Round 3 (2026-08-16) — carousel autoplay, one-line program rows, focused detail page
+
+- **Videos loop, start muted, and autoplay:** added the `autoplay` attribute alongside `muted`/`loop`/`playsinline`, and the carousel script now also sets `.muted = true` and `.loop = true` in JavaScript right before each slide plays, for maximum browser compatibility.
+- **Program Hub cards → one-line rows:** each program is now a single compact row showing Day, Title, Type badge, and a "Details" button — no more multi-line cards.
+- **Program detail page, simplified:** now shows exactly Title → Day/Time/Room → Video → Description → Cost, in that order.
+- **Note on "Cost":** your `content/programs.json` doesn't currently have a dedicated cost/price field, so the Cost box shows whatever's in that program's `notes` field (e.g. "Session fee applies."), falling back to "Free / included with membership — call to confirm" when notes are blank. If you'd like a true dedicated cost field with real dollar amounts per program, that would mean adding a new field to the Decap CMS config and re-entering that data for each program — let me know if you want to do that as a follow-up.
+
 ## After it's live
 
 - Edit programs the same way you already do, through `/admin`.

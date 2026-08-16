@@ -45,6 +45,8 @@
           load(s);
           var video = videoOf(s);
           if (video) {
+            video.muted = true; // required by browsers for autoplay to be allowed
+            video.loop = true;
             video.currentTime = 0;
             video.play().catch(function () {});
           }

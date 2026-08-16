@@ -21,17 +21,12 @@
   function cardTemplate(p) {
     var slug = slugify(p.program);
     return (
-      '<a class="program-card" data-type="' + escapeAttr(p.type) + '" data-day="' + escapeAttr(p.day) +
+      '<a class="program-row" data-type="' + escapeAttr(p.type) + '" data-day="' + escapeAttr(p.day) +
       '" href="/program.html?slug=' + encodeURIComponent(slug) + '">' +
+      '<span class="row-day">' + escapeHtml(p.day || "TBD") + "</span>" +
+      '<span class="row-title">' + escapeHtml(p.program || "Untitled program") + "</span>" +
       '<span class="' + typeBadgeClass(p.type) + '">' + escapeHtml(p.type || "Program") + "</span>" +
-      "<h3>" + escapeHtml(p.program || "Untitled program") + "</h3>" +
-      '<div class="program-meta">' +
-      "<span>&#128197; " + escapeHtml(p.day || "TBD") + (p.time ? " &middot; " + escapeHtml(p.time) : "") + "</span>" +
-      (p.room ? "<span>&#128205; " + escapeHtml(p.room) + "</span>" : "") +
-      (p.status ? "<span>&#9989; " + escapeHtml(p.status) + "</span>" : "") +
-      "</div>" +
-      (p.description ? '<p class="program-desc">' + escapeHtml(p.description) + "</p>" : "") +
-      '<span class="card-cta">View details &rarr;</span>' +
+      '<span class="row-cta btn btn-secondary">Details</span>' +
       "</a>"
     );
   }

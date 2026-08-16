@@ -404,27 +404,60 @@ img, video { max-width: 100%; display: block; }
 .results-count { font-weight: 600; color: var(--ah-ink-soft); margin-bottom: 18px; }
 
 .program-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  gap: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.program-card {
+.program-row {
   background: var(--ah-white);
-  border-radius: var(--radius-md);
+  border-radius: 999px;
   box-shadow: var(--shadow-card);
-  padding: 22px;
+  padding: 10px 10px 10px 22px;
   text-decoration: none;
   color: var(--ah-ink);
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-top: 6px solid var(--ah-teal);
+  align-items: center;
+  gap: 16px;
+  border-left: 6px solid var(--ah-teal);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.program-card:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(44,38,32,0.16); }
-.program-card[data-type="Drop-in"] { border-top-color: var(--ah-teal); }
-.program-card[data-type="Instructional"] { border-top-color: var(--ah-coral); }
-.program-card[data-type="Special Events"] { border-top-color: var(--ah-gold); }
+.program-row:hover { transform: translateX(3px); box-shadow: 0 8px 18px rgba(44,38,32,0.14); }
+.program-row[data-type="Drop-in"] { border-left-color: var(--ah-teal); }
+.program-row[data-type="Instructional"] { border-left-color: var(--ah-coral); }
+.program-row[data-type="Special Events"] { border-left-color: var(--ah-gold); }
+
+.row-day {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--ah-teal-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  flex: 0 0 90px;
+}
+.row-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ah-ink);
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.row-cta {
+  flex: 0 0 auto;
+  padding: 0.5em 1.2em;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 640px) {
+  .program-row { flex-wrap: wrap; border-radius: var(--radius-md); padding: 14px 16px; }
+  .row-day { flex: 0 0 auto; order: 1; }
+  .row-title { order: 3; flex-basis: 100%; white-space: normal; }
+  .badge { order: 2; }
+  .row-cta { order: 4; margin-left: auto; }
+}
 
 .badge {
   display: inline-block;
