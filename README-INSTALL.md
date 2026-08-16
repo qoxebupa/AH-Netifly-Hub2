@@ -17,14 +17,21 @@ This is the rebuilt public-facing site for **activityhaven-cms**, matching the l
 
 ## How to add this to your GitHub repo (no coding needed)
 
-1. Go to your repo on github.com: `AH-Netifly-Hub2`.
-2. For each file in this zip **except `content/programs.json`**, either:
-   - Click "Add file → Upload files" in GitHub's web interface and drag the matching files/folders in (GitHub will ask to confirm overwriting existing files with the same name — say yes), or
-   - Ask whoever manages your GitHub connector in Claude to do it for you (once GitHub tools are available in this session, I can commit these directly instead of you uploading anything).
-3. Commit the changes with a message like "Rebuild public site to match demo, using CMS programs.json."
-4. Netlify will automatically redeploy — check the Netlify dashboard for `activityhaven-cms` a minute or two later, then visit the live site to confirm.
+Same steps you already used successfully:
+
+1. Go to `https://github.com/qoxebupa/AH-Netifly-Hub2/upload/main`.
+2. Click "choose your files" and select everything from this folder **except** the `content` folder.
+3. Type a commit message (e.g. "Fix carousel performance, add narratives and richer program cards") and click **Commit changes** (with "Commit directly to the main branch" selected).
+4. Netlify redeploys automatically within a minute or two.
+
+## What changed in this round (2026-08-16, round 2)
+
+- **Performance fix:** the hero carousel previously loaded all 9 videos into the page at once, which is what made it sluggish/jumpy. Now only the video currently showing (plus the next one, preloaded a couple seconds ahead) is ever loaded — should feel snappy again.
+- **Carousel narratives:** each slide now has a short warm sentence under its title, not just a one-word label.
+- **"Who We Are" video:** added a placeholder spot on the About page (look for the teal box that says "Full 'Who We Are' video coming here soon"). Once Mike sends that file, it'll be dropped into `/videos/who-we-are.mp4` and this placeholder swapped for the real embedded video.
+- **Friendlier Program Hub cards:** each card now shows a short description snippet and a clear "View details →" link, instead of just the bare schedule info.
 
 ## After it's live
 
 - Edit programs the same way you already do, through `/admin`.
-- All 9 hero videos are now self-hosted in `/videos` — the site no longer depends on the demo site staying online. The only remaining external link is the Billiards program's video field in `content/programs.json` (a demo-hosted URL) — worth migrating the same way if/when you touch that program in the CMS.
+- All 9 hero videos are self-hosted in `/videos` — the site no longer depends on the demo site staying online. The only remaining external link is the Billiards program's video field in `content/programs.json` (a demo-hosted URL) — worth migrating the same way if/when you touch that program in the CMS.
