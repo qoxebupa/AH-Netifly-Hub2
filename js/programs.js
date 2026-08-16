@@ -30,6 +30,8 @@
       (p.room ? "<span>&#128205; " + escapeHtml(p.room) + "</span>" : "") +
       (p.status ? "<span>&#9989; " + escapeHtml(p.status) + "</span>" : "") +
       "</div>" +
+      (p.description ? '<p class="program-desc">' + escapeHtml(p.description) + "</p>" : "") +
+      '<span class="card-cta">View details &rarr;</span>' +
       "</a>"
     );
   }
