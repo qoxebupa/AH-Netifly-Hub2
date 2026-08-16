@@ -46,6 +46,10 @@ Turned out the real `content/programs.json` in this repo is shaped like `{"progr
 
 The About page now embeds the real 3-minute "Who We Are" video via its VideoPress link, replacing the placeholder box. No file upload was needed — it's linked directly from videopress.com.
 
+## Round 3.2 — "Our Story" button now auto-plays the video
+
+The homepage's "Our Story" button now links to `/about.html?play=1#who-we-are`. When the About page detects that `?play=1` flag, it swaps the video embed to an autoplay (muted, as browsers require) version and smooth-scrolls straight to it. Visiting the About page any other way (nav menu, direct link) still shows the video as a normal click-to-play embed — it only auto-starts when someone arrives via that specific homepage button.
+
 ## After it's live
 
 - Edit programs the same way you already do, through `/admin`.
