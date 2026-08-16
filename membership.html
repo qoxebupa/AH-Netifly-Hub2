@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Program Hub — Activity Haven Recreation Centre</title>
-<meta name="description" content="Browse 80+ drop-in programs, instructional classes, and special events at Activity Haven. Filter by day and type.">
+<title>Membership — Activity Haven Recreation Centre</title>
+<meta name="description" content="Activity Haven membership is $30 for the year, valid for one year from your purchase date. Learn about fees and how to join.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -32,35 +32,40 @@
 
 <section class="hero" style="padding-bottom:20px;">
   <div class="container">
-    <span class="hero-eyebrow">Program Hub</span>
-    <h1>Find your next favourite thing</h1>
-    <p>Cards, crafts, fitness, music, and friends. Filter over 80 programs by day and type — this list is edited by our staff right from the Activity Haven admin panel, so it's always up to date.</p>
+    <span class="hero-eyebrow">Membership</span>
+    <h1>Simple, one membership for everyone</h1>
+    <p>$30 for the year, valid for one year from your purchase date. Membership gives you access to instructional and drop-in programming (some special events are exempt from the requirement).</p>
   </div>
 </section>
 
 <section class="section section-alt">
   <div class="container">
-
-    <div class="filters">
-      <div class="filter-group">
-        <label for="filter-day">Day</label>
-        <select id="filter-day" data-filter-day></select>
+    <div class="grid-3">
+      <div class="pin-card">
+        <h3>Annual Membership</h3>
+        <p class="stat-num" style="font-size:2rem;">$30</p>
+        <p>Valid one year from purchase.</p>
       </div>
-      <div class="filter-group">
-        <label for="filter-type">Type</label>
-        <select id="filter-type" data-filter-type></select>
+      <div class="pin-card">
+        <h3>Per-Program Fee</h3>
+        <p class="stat-num" style="font-size:2rem;">$3</p>
+        <p>Charged each visit, on top of membership.</p>
       </div>
-      <div class="filter-group" style="flex:1;">
-        <label for="filter-search">Search by name</label>
-        <input id="filter-search" type="search" data-filter-search placeholder="e.g. Yoga, Euchre, Watercolour&hellip;">
+      <div class="pin-card">
+        <h3>Punch Cards</h3>
+        <p class="stat-num" style="font-size:2rem;">$15 / $30</p>
+        <p>5 uses for $15, or 10 uses for $30.</p>
       </div>
     </div>
+    <p style="text-align:center; margin-top:32px; color:var(--ah-ink-soft);">Note: most instructional classes also charge a separate session fee ($16–$95), in addition to the $3 user fee per class.</p>
+  </div>
+</section>
 
-    <p class="results-count" data-results-count>Loading programs&hellip;</p>
-    <div class="program-grid" data-program-grid>
-      <div class="empty-state">Loading programs&hellip;</div>
-    </div>
-
+<section class="section section-teal">
+  <div class="container section-header">
+    <h2>How to join</h2>
+    <p>Drop by the office or reach out — we're happy to help you get started.</p>
+    <a class="btn btn-primary" href="/contact.html">Contact Us &rarr;</a>
   </div>
 </section>
 
@@ -91,6 +96,5 @@
 </footer>
 
 <script src="/js/nav.js" defer></script>
-<script src="/js/programs.js" defer></script>
 </body>
 </html>

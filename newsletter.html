@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Program Hub — Activity Haven Recreation Centre</title>
-<meta name="description" content="Browse 80+ drop-in programs, instructional classes, and special events at Activity Haven. Filter by day and type.">
+<title>Newsletter — Activity Haven Recreation Centre</title>
+<meta name="description" content="News, events, workshops, and tournaments happening at Activity Haven.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -32,35 +32,19 @@
 
 <section class="hero" style="padding-bottom:20px;">
   <div class="container">
-    <span class="hero-eyebrow">Program Hub</span>
-    <h1>Find your next favourite thing</h1>
-    <p>Cards, crafts, fitness, music, and friends. Filter over 80 programs by day and type — this list is edited by our staff right from the Activity Haven admin panel, so it's always up to date.</p>
+    <span class="hero-eyebrow">Newsletter</span>
+    <h1>News, events, workshops &amp; tournaments</h1>
+    <p>A message from the Executive Director, member spotlights, upcoming special events, tournaments and workshops, bus trip information, and the monthly lunch menu.</p>
   </div>
 </section>
 
 <section class="section section-alt">
   <div class="container">
-
-    <div class="filters">
-      <div class="filter-group">
-        <label for="filter-day">Day</label>
-        <select id="filter-day" data-filter-day></select>
-      </div>
-      <div class="filter-group">
-        <label for="filter-type">Type</label>
-        <select id="filter-type" data-filter-type></select>
-      </div>
-      <div class="filter-group" style="flex:1;">
-        <label for="filter-search">Search by name</label>
-        <input id="filter-search" type="search" data-filter-search placeholder="e.g. Yoga, Euchre, Watercolour&hellip;">
-      </div>
+    <div class="flipbook-frame">
+      <!-- Staff: replace this src with the embed link for the current issue -->
+      <iframe src="about:blank" title="Activity Haven newsletter" loading="lazy"></iframe>
     </div>
-
-    <p class="results-count" data-results-count>Loading programs&hellip;</p>
-    <div class="program-grid" data-program-grid>
-      <div class="empty-state">Loading programs&hellip;</div>
-    </div>
-
+    <p style="text-align:center; margin-top:16px; color:var(--ah-ink-soft);">Newsletter content is refreshed monthly. Call 705-876-1670 if the current issue isn't loading.</p>
   </div>
 </section>
 
@@ -91,6 +75,5 @@
 </footer>
 
 <script src="/js/nav.js" defer></script>
-<script src="/js/programs.js" defer></script>
 </body>
 </html>

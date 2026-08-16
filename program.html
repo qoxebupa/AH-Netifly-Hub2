@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Program Hub — Activity Haven Recreation Centre</title>
-<meta name="description" content="Browse 80+ drop-in programs, instructional classes, and special events at Activity Haven. Filter by day and type.">
+<title>Program — Activity Haven Recreation Centre</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -30,37 +29,11 @@
   </nav>
 </header>
 
-<section class="hero" style="padding-bottom:20px;">
-  <div class="container">
-    <span class="hero-eyebrow">Program Hub</span>
-    <h1>Find your next favourite thing</h1>
-    <p>Cards, crafts, fitness, music, and friends. Filter over 80 programs by day and type — this list is edited by our staff right from the Activity Haven admin panel, so it's always up to date.</p>
-  </div>
-</section>
-
 <section class="section section-alt">
   <div class="container">
-
-    <div class="filters">
-      <div class="filter-group">
-        <label for="filter-day">Day</label>
-        <select id="filter-day" data-filter-day></select>
-      </div>
-      <div class="filter-group">
-        <label for="filter-type">Type</label>
-        <select id="filter-type" data-filter-type></select>
-      </div>
-      <div class="filter-group" style="flex:1;">
-        <label for="filter-search">Search by name</label>
-        <input id="filter-search" type="search" data-filter-search placeholder="e.g. Yoga, Euchre, Watercolour&hellip;">
-      </div>
+    <div class="program-detail" data-program-detail>
+      <p>Loading program&hellip;</p>
     </div>
-
-    <p class="results-count" data-results-count>Loading programs&hellip;</p>
-    <div class="program-grid" data-program-grid>
-      <div class="empty-state">Loading programs&hellip;</div>
-    </div>
-
   </div>
 </section>
 
@@ -91,6 +64,6 @@
 </footer>
 
 <script src="/js/nav.js" defer></script>
-<script src="/js/programs.js" defer></script>
+<script src="/js/program-detail.js" defer></script>
 </body>
 </html>

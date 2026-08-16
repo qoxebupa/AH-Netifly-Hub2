@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Program Hub — Activity Haven Recreation Centre</title>
-<meta name="description" content="Browse 80+ drop-in programs, instructional classes, and special events at Activity Haven. Filter by day and type.">
+<title>About Us — Activity Haven Recreation Centre</title>
+<meta name="description" content="Activity Haven Recreation Centre has served adults 50+ in Peterborough since 1990. Read our story, vision, mission, and values.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -32,35 +32,44 @@
 
 <section class="hero" style="padding-bottom:20px;">
   <div class="container">
-    <span class="hero-eyebrow">Program Hub</span>
-    <h1>Find your next favourite thing</h1>
-    <p>Cards, crafts, fitness, music, and friends. Filter over 80 programs by day and type — this list is edited by our staff right from the Activity Haven admin panel, so it's always up to date.</p>
+    <span class="hero-eyebrow">Our story</span>
+    <h1>About Activity Haven</h1>
+    <p>Serving adults 50+ in Peterborough since 1990.</p>
   </div>
 </section>
 
 <section class="section section-alt">
   <div class="container">
+    <div class="section-header" style="text-align:left; max-width:760px; margin:0;">
+      <h2>Who we are</h2>
+      <p>Activity Haven is a social hub where members aged 50 and older can connect with peers, pursue shared interests, and enjoy activities together. A place to belong, every single day.</p>
 
-    <div class="filters">
-      <div class="filter-group">
-        <label for="filter-day">Day</label>
-        <select id="filter-day" data-filter-day></select>
-      </div>
-      <div class="filter-group">
-        <label for="filter-type">Type</label>
-        <select id="filter-type" data-filter-type></select>
-      </div>
-      <div class="filter-group" style="flex:1;">
-        <label for="filter-search">Search by name</label>
-        <input id="filter-search" type="search" data-filter-search placeholder="e.g. Yoga, Euchre, Watercolour&hellip;">
-      </div>
+      <h2>Our story</h2>
+      <p>Activity Haven became an incorporated organization in April 1990, operating independently under the supervision of a Board of Directors. By 1994, infrastructure funding enabled facility expansions, including accessibility improvements for people with disabilities. Today the centre runs more than 80 ongoing programs at the Queen Alexandra Building — from card games to dance, woodcarving, martial arts, and daily yoga classes — supported by roughly 200 volunteers across every part of the operation.</p>
     </div>
 
-    <p class="results-count" data-results-count>Loading programs&hellip;</p>
-    <div class="program-grid" data-program-grid>
-      <div class="empty-state">Loading programs&hellip;</div>
+    <div class="grid-3" style="margin-top:40px;">
+      <div class="pin-card">
+        <h3>Vision</h3>
+        <p>A centre that is proactive, progressive, accountable and innovative, providing recreational services to the 50+ population in Peterborough and surrounding areas.</p>
+      </div>
+      <div class="pin-card">
+        <h3>Mission</h3>
+        <p>To promote socialization of adults 50+ with a view to support and strengthen the determinants of health and wellbeing.</p>
+      </div>
+      <div class="pin-card">
+        <h3>Values</h3>
+        <p>Involvement, innovation, integrity, transparency and inclusiveness are foundational to every aspect of the centre.</p>
+      </div>
     </div>
+  </div>
+</section>
 
+<section class="section section-teal">
+  <div class="container section-header">
+    <h2>Come see for yourself</h2>
+    <p>180 Barnardo Ave, Peterborough, ON K9H 5V3 &middot; 705-876-1670 &middot; Monday–Friday, 8:30am–4:00pm</p>
+    <a class="btn btn-primary" href="/programs.html">Browse Programs &rarr;</a>
   </div>
 </section>
 
@@ -91,6 +100,5 @@
 </footer>
 
 <script src="/js/nav.js" defer></script>
-<script src="/js/programs.js" defer></script>
 </body>
 </html>
