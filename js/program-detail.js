@@ -23,6 +23,8 @@
   }
 
   // Turn a video URL (YouTube, direct .mp4, etc.) into embeddable markup.
+  // Autoplay/muted/loop, no click required to start — same behaviour as the
+  // homepage carousel videos.
   function videoEmbed(url) {
     if (!url) return "";
     var yt = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|live\/))([\w-]{6,})/);
@@ -30,12 +32,13 @@
       return (
         '<div class="program-detail-video"><iframe src="https://www.youtube.com/embed/' +
         yt[1] +
-        '" title="Program video" allowfullscreen loading="lazy"></iframe></div>'
+        '?autoplay=1&mute=1&loop=1&playlist=' + yt[1] +
+        '" title="Program video" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></div>'
       );
     }
     if (/\.(mp4|webm|ogg)(\?|$)/i.test(url)) {
       return (
-        '<div class="program-detail-video"><video controls preload="metadata" src="' +
+        '<div class="program-detail-video"><video controls autoplay muted loop playsinline preload="metadata" src="' +
         escapeHtml(url) +
         '"></video></div>'
       );

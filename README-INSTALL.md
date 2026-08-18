@@ -87,3 +87,7 @@ The homepage's "Our Story" button now links to `/about.html?play=1#who-we-are`. 
 - **Gallery page fleshed out** to match the demo's full section set: Special Events is now a 4-poster placeholder grid, added a "This Week" (Facebook) section, and expanded "Around the Centre" to 8 photo placeholders.
 - **New homepage banner:** added a centred badge/logo mark, "Activity Haven Recreation Centre for Adults 50+" heading, and "Join Us, Come Out & Play!" tagline above the nav bar on the homepage only — matching the demo's layout while keeping our own nav bar untouched. This uses a plain CSS circle badge ("AH") since there's no real logo image file yet; send me the actual logo image whenever you have it and I'll drop it in.
 - Confirmed: no video on the site currently requires a click to start (carousel already autoplays; program-detail videos are intentionally click-to-play since they can run several minutes) — no changes needed there this round.
+
+## Round 6.1 (2026-08-18) — program-detail videos now autoplay too
+
+Correction to the note above: the individual program videos (the ones that show on a program's own detail page, like Billiards or Chair Yoga) now also autoplay, start muted, and loop, same as the homepage carousel — no click needed. They still keep their play/pause/volume controls, so visitors can pause or unmute if they want, but nothing requires a click to get started. Applies to both direct video files and YouTube-linked videos.
