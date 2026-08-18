@@ -48,6 +48,22 @@
     );
   }
 
+  function imageEmbed(url) {
+    if (!url) return "";
+    return (
+      '<div class="program-detail-video"><img src="' + escapeHtml(url) +
+      '" alt="" style="width:100%;height:100%;object-fit:cover;"></div>'
+    );
+  }
+
+  // A program may have a video, an image, both, or neither. Show whichever
+  // media is available — video takes priority when both are present.
+  function mediaEmbed(program) {
+    if (program.video) return videoEmbed(program.video);
+    if (program.image) return imageEmbed(program.image);
+    return "";
+  }
+
   function render(program) {
     var root = document.querySelector("[data-program-detail]");
     document.title = (program.program || "Program") + " — Activity Haven";
@@ -65,11 +81,13 @@
       metaItem("Time", program.time) +
       metaItem("Room", program.room) +
       "</div>" +
-      videoEmbed(program.video) +
+      mediaEmbed(program) +
       (program.description ? "<p>" + escapeHtml(program.description) + "</p>" : "") +
-      '<div class="detail-meta-grid">' +
-      metaItem("Cost", program.notes || "Free / included with membership — call to confirm") +
-      "</div>" +
+      (program.type === "Instructional"
+        ? '<div class="detail-meta-grid">' +
+          metaItem("Cost", program.notes || "Call for pricing") +
+          "</div>"
+        : "") +
       '<p class="section-header"><a class="btn btn-primary" href="/contact.html">Ask about this program &rarr;</a></p>';
   }
 

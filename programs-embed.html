@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Program Hub — Activity Haven Recreation Centre</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  /* Embed-only tweaks: no header/footer/hero on this page, so drop the
+     extra top padding those sections normally provide, and keep the
+     background transparent so it blends into whatever page embeds it. */
+  body { background: transparent; }
+  .section { padding: 0; }
+</style>
+</head>
+<body>
+
+<section class="section">
+  <div class="container" style="padding:0 4px;">
+
+    <div class="filters">
+      <div class="filter-group">
+        <label for="filter-day">Day</label>
+        <select id="filter-day" data-filter-day></select>
+      </div>
+      <div class="filter-group">
+        <label for="filter-type">Type</label>
+        <select id="filter-type" data-filter-type></select>
+      </div>
+      <div class="filter-group" style="flex:1;">
+        <label for="filter-search">Search by name</label>
+        <input id="filter-search" type="search" data-filter-search placeholder="e.g. Yoga, Euchre, Watercolour&hellip;">
+      </div>
+    </div>
+
+    <p class="results-count" data-results-count>Loading programs&hellip;</p>
+    <div class="program-grid" data-program-grid>
+      <div class="empty-state">Loading programs&hellip;</div>
+    </div>
+
+  </div>
+</section>
+
+<script src="/js/programs.js" defer></script>
+</body>
+</html>

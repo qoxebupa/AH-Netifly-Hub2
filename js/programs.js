@@ -22,9 +22,11 @@
     var slug = slugify(p.program);
     return (
       '<a class="program-row" data-type="' + escapeAttr(p.type) + '" data-day="' + escapeAttr(p.day) +
-      '" href="/program.html?slug=' + encodeURIComponent(slug) + '">' +
+      '" href="/program.html?slug=' + encodeURIComponent(slug) + '" target="_top">' +
       '<span class="row-day">' + escapeHtml(p.day || "TBD") + "</span>" +
       '<span class="row-title">' + escapeHtml(p.program || "Untitled program") + "</span>" +
+      '<span class="row-time">' + escapeHtml(p.time || "&ndash;") + "</span>" +
+      '<span class="row-room">' + escapeHtml(p.room || "&ndash;") + "</span>" +
       '<span class="' + typeBadgeClass(p.type) + '">' + escapeHtml(p.type || "Program") + "</span>" +
       '<span class="row-cta btn btn-secondary">Details</span>' +
       "</a>"

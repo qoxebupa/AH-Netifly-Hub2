@@ -38,12 +38,30 @@
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section section-alt" id="who-we-are">
   <div class="container">
-    <div class="featured-video">
-      <!-- AH-STAFF: replace this placeholder with the full "Who We Are" video once it's uploaded to /videos/who-we-are.mp4 -->
-      <div class="featured-video-placeholder">&#127909;&nbsp; Full "Who We Are" video coming here soon</div>
+    <div class="section-header" style="margin-bottom:24px;">
+      <span class="kicker">Meet us</span>
+      <h2>Who We Are</h2>
     </div>
+    <div class="featured-video">
+      <iframe data-who-we-are-video src="https://videopress.com/embed/HhgNgUG5" title="Who We Are — Activity Haven" frameborder="0" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <script src="https://v0.wordpress.com/js/next/videopress-iframe.js"></script>
+    <script>
+      // If we arrived here via the homepage "Our Story" button (?play=1),
+      // swap in an autoplay version of the embed and scroll it into view.
+      (function () {
+        if (new URLSearchParams(window.location.search).get("play") !== "1") return;
+        var iframe = document.querySelector("[data-who-we-are-video]");
+        if (!iframe) return;
+        // Muted is required for browsers to allow autoplay without a direct
+        // click on the video itself; viewers can unmute with the player's own controls.
+        iframe.setAttribute("loading", "eager");
+        iframe.src = "https://videopress.com/embed/HhgNgUG5?autoPlay=true&muted=true";
+        iframe.closest("section").scrollIntoView({ behavior: "smooth", block: "start" });
+      })();
+    </script>
   </div>
 </section>
 
