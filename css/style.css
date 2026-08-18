@@ -103,6 +103,47 @@ img, video { max-width: 100%; display: block; }
   box-shadow: 0 6px 0 var(--ah-gold-deep);
 }
 
+/* ---------- Brand banner (homepage only, above the nav) ---------- */
+.brand-banner {
+  background: linear-gradient(160deg, var(--ah-teal-pale) 0%, var(--ah-cream) 70%);
+  text-align: center;
+  padding: 36px 24px 30px;
+  border-bottom: 4px dashed var(--ah-teal-mid);
+}
+.brand-banner .badge-mark {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--ah-teal-deep);
+  color: var(--ah-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.6rem;
+  box-shadow: var(--shadow-card);
+  border: 4px solid var(--ah-white);
+  outline: 2px solid var(--ah-gold);
+}
+.brand-banner h1 {
+  margin-bottom: 4px;
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+}
+.brand-banner h1 em {
+  font-style: italic;
+  color: var(--ah-coral-deep);
+}
+.brand-banner .banner-tagline {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--ah-coral-deep);
+  font-size: 1.05rem;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
 /* ---------- Header / Nav ---------- */
 .site-header {
   background: var(--ah-cream);

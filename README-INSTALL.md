@@ -79,3 +79,11 @@ The homepage's "Our Story" button now links to `/about.html?play=1#who-we-are`. 
 
 - Edit programs the same way you already do, through `/admin`.
 - All 9 hero videos are self-hosted in `/videos` — the site no longer depends on the demo site staying online. The only remaining external link is the Billiards program's video field in `content/programs.json` (a demo-hosted URL) — worth migrating the same way if/when you touch that program in the CMS.
+
+## Round 6 (2026-08-18)
+
+- **Program Hub sort order:** rows (and the Day/Type dropdown option order) now follow Day → Time → Type. Special Events are the one exception — if you type an actual date into a Special Event's "Day" field (e.g. "August 20" or "2026-08-20") instead of a weekday, that event will sort by that date instead of by weekday/time. Leaving a weekday in there still works exactly as before.
+- **Nav label shortened:** "Programs/Events" is now just "Activities" on every page, to help the menu bar fit on one line more often.
+- **Gallery page fleshed out** to match the demo's full section set: Special Events is now a 4-poster placeholder grid, added a "This Week" (Facebook) section, and expanded "Around the Centre" to 8 photo placeholders.
+- **New homepage banner:** added a centred badge/logo mark, "Activity Haven Recreation Centre for Adults 50+" heading, and "Join Us, Come Out & Play!" tagline above the nav bar on the homepage only — matching the demo's layout while keeping our own nav bar untouched. This uses a plain CSS circle badge ("AH") since there's no real logo image file yet; send me the actual logo image whenever you have it and I'll drop it in.
+- Confirmed: no video on the site currently requires a click to start (carousel already autoplays; program-detail videos are intentionally click-to-play since they can run several minutes) — no changes needed there this round.

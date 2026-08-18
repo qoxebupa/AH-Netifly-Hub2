@@ -18,6 +18,44 @@
     return "badge";
   }
 
+  var DAY_ORDER = { Monday: 1, Tuesday: 2, Wednesday: 3, Thursday: 4, Friday: 5, Saturday: 6, Sunday: 7 };
+  var TYPE_ORDER = { "Drop-in": 1, "Instructional": 2, "Special Events": 3, "Special Event": 3 };
+
+  function isSpecialEvent(p) {
+    return /special/i.test(p.type || "");
+  }
+
+  function timeToMinutes(t) {
+    if (!t) return 99999;
+    var m = String(t).match(/(\d{1,2}):(\d{2})/);
+    if (!m) return 99999;
+    return parseInt(m[1], 10) * 60 + parseInt(m[2], 10);
+  }
+
+  // Sort key: regular programs sort by weekday, then start time, then type.
+  // Special Events sort by an actual date if the "day" field holds one
+  // (e.g. "August 20" or "2026-08-20"); otherwise they fall back to the
+  // same weekday/time ordering as everything else.
+  function sortKey(p) {
+    if (isSpecialEvent(p)) {
+      var ts = Date.parse(p.day);
+      if (!isNaN(ts)) return { bucket: 0, primary: ts, secondary: 0 };
+    }
+    var dayIdx = DAY_ORDER[p.day];
+    if (dayIdx) return { bucket: 1, primary: dayIdx, secondary: timeToMinutes(p.time) };
+    return { bucket: 2, primary: 0, secondary: 0 };
+  }
+
+  function comparePrograms(a, b) {
+    var ka = sortKey(a), kb = sortKey(b);
+    if (ka.bucket !== kb.bucket) return ka.bucket - kb.bucket;
+    if (ka.primary !== kb.primary) return ka.primary - kb.primary;
+    if (ka.secondary !== kb.secondary) return ka.secondary - kb.secondary;
+    var typeA = TYPE_ORDER[a.type] || 99, typeB = TYPE_ORDER[b.type] || 99;
+    if (typeA !== typeB) return typeA - typeB;
+    return String(a.program || "").localeCompare(String(b.program || ""));
+  }
+
   function cardTemplate(p) {
     var slug = slugify(p.program);
     return (
@@ -83,6 +121,7 @@
         return;
       }
 
+      filtered.sort(comparePrograms);
       grid.innerHTML = filtered.map(cardTemplate).join("");
     }
 
@@ -99,7 +138,11 @@
         var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].filter(function (d) {
           return allPrograms.some(function (p) { return p.day === d; });
         });
-        var types = Array.from(new Set(allPrograms.map(function (p) { return p.type; }).filter(Boolean)));
+        var typeOrderList = ["Drop-in", "Instructional", "Special Events", "Special Event"];
+        var presentTypes = new Set(allPrograms.map(function (p) { return p.type; }).filter(Boolean));
+        var types = typeOrderList.filter(function (t) { return presentTypes.has(t); });
+        // Catch any type values that don't match the known list, appended at the end.
+        presentTypes.forEach(function (t) { if (types.indexOf(t) === -1) types.push(t); });
 
         populateSelect(daySelect, days, "All Days");
         populateSelect(typeSelect, types, "All Types");
